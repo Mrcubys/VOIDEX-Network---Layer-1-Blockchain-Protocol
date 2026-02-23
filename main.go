@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/core"
-	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/storage"
+	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/tree/main/core"
+	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/tree/main/storage"
 )
 
 func main() {
