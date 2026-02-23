@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/tree/main/consensus"
-	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/tree/main/storage"
+	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/consensus"
+	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/storage"
 )
 
 // Blockchain manages the chain of blocks
