@@ -1,35 +1,37 @@
 package main
 
 import (
-	"fmt"
-	"log"
+    "fmt"
+    "log"
 
-	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/core"
-	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/storage"
+    "github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/core"
+    "github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/storage"
 )
 
 func main() {
-	fmt.Println("Starting VOIDEX Network Layer-1 Blockchain Protocol...")
+    fmt.Println("Starting VOIDEX Network Node...")
 
-	// Initialize storage
-	dbPath := "./blockchain_data"
-	store, err := storage.NewLevelDBStorage(dbPath)
-	if err != nil {
-		log.Fatalf("Failed to initialize storage: %v", err)
-	}
-	defer store.Close()
+    dbPath := "./blockchain_data"
+    store, err := storage.NewLevelDBStorage(dbPath)
+    if err != nil {
+        log.Fatalf("Failed to initialize storage: %v", err)
+    }
+    defer store.Close()
 
-	// Create blockchain instance
-	minerAddress := "VDX1ABC123..." // Replace with your address
-	blockchain, err := core.NewBlockchain(store, minerAddress)
-	if err != nil {
-		log.Fatalf("Failed to create blockchain: %v", err)
-	}
+    minerAddress := "VDX1ABC123..."
+    blockchain, err := core.NewBlockchain(store, minerAddress)
+    if err != nil {
+        log.Fatalf("Failed to create blockchain: %v", err)
+    }
 
-	fmt.Printf("Blockchain initialized successfully!\n")
-	fmt.Printf("Total blocks: %d\n", len(blockchain.Blocks))
-	fmt.Printf("Current difficulty: 0x%X\n", blockchain.Difficulty)
+    fmt.Printf("Blockchain initialized! Total blocks: %d\n", len(blockchain.Blocks))
 
-	// Your blockchain logic here...
-	fmt.Println("VOIDEX Network is running...")
+    // Tambah block contoh
+    _, err = blockchain.AddBlock("Transaksi pertama", minerAddress)
+    if err != nil {
+        log.Fatalf("Failed to add block: %v", err)
+    }
+
+    fmt.Printf("Total blocks after adding one: %d\n", len(blockchain.Blocks))
+    fmt.Println("VOIDEX Node is running with persistent storage!")
 }
