@@ -1,6 +1,6 @@
 package storage
 
-import "github.com/Mrcubys/VOIDEX-Network/core"
+import "github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/tree/main/core"
 
 // Storage interface defines database operations
 type Storage interface {
