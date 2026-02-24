@@ -6,7 +6,6 @@ import (
 	"os"
 	"sync"
 
-	"github.com/Mrcubys/VOIDEX-Network---Layer-1-Blockchain-Protocol/core"
 	"github.com/syndtr/goleveldb/leveldb"
 )
 
